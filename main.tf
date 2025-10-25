@@ -16,5 +16,5 @@ resource "aws_instance" "ec2" {
 
 output "web_ip_map" {
   description = "The public IP addresses of the EC2 instances"
-  value = { for i in aws_instance.web : i.tags.Name => i.public_ip }
+  value = { for i in aws_instance.ec2 : i.tags.Name => i.public_ip }
 }
